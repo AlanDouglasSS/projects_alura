@@ -1,0 +1,65 @@
+<!-- bandeiras.html -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+function desenhaBandeiraBrasil() {
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle="green";
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle="yellow";
+    pincel.beginPath();
+    pincel.moveTo(300, 50);
+    pincel.lineTo(50, 200);
+    pincel.lineTo(550, 200);
+    pincel.fill();
+
+    pincel.beginPath();
+    pincel.moveTo(50, 200);
+    pincel.lineTo(300, 350);
+    pincel.lineTo(550, 200);
+    pincel.fill();
+
+    pincel.fillStyle="darkblue";
+    pincel.beginPath();
+
+    pincel.arc(300, 200, 100, 0, 2* 3.14);
+    pincel.fill();
+}
+
+
+function desenhaBandeiraAlemanha() {
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0, 0, 600, 133);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(0, 133, 600, 133);
+
+    pincel.fillStyle = 'yellow';
+    pincel.fillRect(0, 266, 600, 133);
+}
+
+
+/*
+Esse código define duas funções que desenham as bandeiras
+do Brasil e da Alemanha em um elemento canvas. A primeira 
+função, desenhaBandeiraBrasil(), desenha a bandeira do 
+Brasil com um retângulo verde, um losango amarelo e uma 
+esfera azul no centro. 
+ 
+A segunda função, desenhaBandeiraAlemanha(), 
+desenha a bandeira da Alemanha com três faixas horizontais, 
+sendo a superior preta, a do meio vermelha e a inferior 
+amarela. No entanto, o código não é executado em lugar algum, 
+portanto não há nada sendo mostrado no navegador. Para exibir 
+as bandeiras, é necessário chamar as funções em algum momento.
+*/
+
+</script>

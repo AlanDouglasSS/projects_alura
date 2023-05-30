@@ -1,0 +1,117 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var raio = 10;
+    var xAleatorio;
+    var yAleatorio;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+    function desenhaAlvo(x,y) {
+
+        desenhaCirculo(x, y, raio+20, 'red');
+        desenhaCirculo(x, y, raio+10, 'white');
+        desenhaCirculo(x, y, raio, 'red');
+
+    }
+
+    function sorteiaPosicao(maximo) {
+
+        return Math.floor(Math.random() * maximo);
+
+    }
+
+function atualizaTela() {
+    limpaTela();
+    xAleatorio = sorteiaPosicao(600);
+    yAleatorio = sorteiaPosicao(400);
+    desenhaAlvo(xAleatorio, yAleatorio);
+}
+
+setInterval(atualizaTela, 1000);
+
+function dispara(evento) {
+
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    if((x > xAleatorio - raio)
+    && (x < xAleatorio + raio)
+    && (y > yAleatorio - raio)
+    && (y < yAleatorio + raio)) {
+
+        alert('Acertou!');
+
+    }
+
+
+}
+
+tela.onclick = dispara;
+
+
+
+/*
+
+Este script está criando um jogo simples de acertar o alvo, 
+com um canvas que representa a área do jogo.
+
+A primeira parte do script define o tamanho do 
+canvas (600x400) e cria uma variável "pincel" que 
+se refere ao contexto 2D do canvas, que é usado 
+para desenhar formas e elementos na tela. Em seguida, 
+a cor de fundo do canvas é definida como "lightgray" 
+e um retângulo preenchido com essa cor é desenhado 
+para cobrir toda a área do canvas.
+
+O próximo passo é definir o tamanho do alvo (raio=10) e 
+as funções para desenhar um círculo e limpar a tela. 
+A função "desenhaAlvo" usa três chamadas da função 
+"desenhaCirculo" para criar o alvo, que consiste em 
+três círculos: um grande vermelho, um menor branco 
+e um menor ainda vermelho.
+
+A função "sorteiaPosicao" gera um número aleatório 
+que será usado para definir a posição do alvo. 
+A função "atualizaTela" chama "limpaTela", gera 
+novas coordenadas aleatórias para o alvo e chama 
+"desenhaAlvo" com essas coordenadas.
+
+A seguir, o script define a função "dispara", 
+que será chamada quando o usuário clicar no canvas. 
+Quando o usuário clica, a posição do mouse em relação 
+ao topo e à esquerda do canvas é obtida e salva nas 
+variáveis "x" e "y". Essas coordenadas são então 
+comparadas com as coordenadas do alvo para verificar 
+se o clique acertou o alvo. Se o clique acertou o alvo, 
+um alerta é exibido com a mensagem "Acertou!".
+
+Por fim, a última linha do script define que a função 
+"dispara" será chamada sempre que o usuário clicar no 
+canvas e usa o comando setInterval para chamar a função 
+"atualizaTela" a cada segundo, fazendo com que o alvo 
+mude de posição na tela.
+
+*/
+
+</script>

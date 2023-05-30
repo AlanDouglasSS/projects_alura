@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+
+    <div id="container" onload="reset()">
+		<div id="text-container">
+			<textarea id="text-input" placeholder="Digite sua mensagem aqui"></textarea>
+			<div id="button-container">
+				<button class="button" id="encode-button">Codificar</button>
+				<button class="button" id="decode-button">Decodificar</button>
+			</div>
+		</div>
+		<div id="message-container">
+			<div id="message"></div>
+			<div id="no-message">
+				<img src="./assets/img/boneco.jpg" alt="Nenhuma mensagem encontrada!">
+				<div>Nenhuma mensagem encontrada!</div>
+				
+			</div>
+			<button id="copy-button">Copiar</button>
+			
+		</div>
+	</div>
+
+	<script src="./assets/script/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
+  pincel.fillStyle = 'lightgray';
+  pincel.fillRect(0, 0, 600, 400);
+
+  function desenhaCirculo(x, y, raio) {
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(x, y, raio, 0, 2 * Math.PI);
+    pincel.fill();
+  }
+
+  function limpaTela() { //APAGA O CIRCULO ANTERIOR
+    pincel.clearRect(0, 0, 600, 400); 
+  }
+  var x = 20;
+  var sentido = 1;
+
+  function atualizaTela() {
+    limpaTela(); //CIRCULO ANTERIOR SENDO APAGADO
+    if (x > 600) { //LIMITE DO MOVIMENTO DO CIRCULO (FINAL DA TELA)
+      sentido = -1; //O CIRCULO FAZ O MOVIMENTO INVERSO!
+    } else if (x < 0) {
+      sentido = 1;
+    }
+    desenhaCirculo(x, 20, 10);
+    x = x + sentido;
+  }
+  setInterval(atualizaTela, 10); //CHAMA A FUNÇÃO ATUALIZA TELA A CADA 10MS
+
+
+  /*
+  Esse código desenha um círculo azul que se move horizontalmente 
+  de um lado para o outro da tela. O círculo começa na posição x=20 
+  e se move em incrementos de 1 pixel a cada atualização da tela. 
+
+  Quando o círculo atinge a borda direita da tela, sua direção é 
+  invertida e ele começa a se mover na direção oposta. Isso é feito 
+  por meio da variável "sentido", que é definida como 1 para a 
+  direita e -1 para a esquerda, e é multiplicada pelo valor de x 
+  a cada atualização da tela. A função "limpaTela()" é usada 
+  para apagar o círculo desenhado anteriormente a cada atualização. 
+  
+  O setInterval é usado para chamar a função "atualizaTela()" a 
+  cada 10 milissegundos, resultando em uma animação suave do 
+  movimento do círculo.
+  */
+</script>

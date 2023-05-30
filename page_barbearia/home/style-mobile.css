@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 480px){
+    .box, .main-into, .content-benefits, .content-map, .clip{
+        width: auto;        
+    }
+    .box{
+        margin: auto;
+        width: 285px;
+    }
+
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    nav ul li a{
+        font-size: 15px;
+    }
+
+    .benefits-into, .imege-benefits{
+        width: 100%;
+    }
+}

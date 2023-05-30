@@ -1,0 +1,82 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var raio = 10;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+   }
+
+    function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+    function desenhaAlvo(x, y) {
+
+    desenhaCirculo(x, y, raio+20, 'red');
+    desenhaCirculo(x, y, raio+10, 'white');
+    desenhaCirculo(x, y, raio, 'red');
+
+    }
+
+    function sorteiaPosicao(maximo) {
+
+        return Math.floor(Math.random() * maximo);
+
+    }
+
+    function atualizaTela() {
+    limpaTela();
+    var xAleatorio = sorteiaPosicao(600);
+    var yAleatorio = sorteiaPosicao(400);
+    desenhaAlvo(xAleatorio, yAleatorio);
+    }
+
+    setInterval(atualizaTela, 1000);
+
+    /*
+    
+    Esse código cria um canvas com largura de 600 pixels e 
+    altura de 400 pixels. O código define uma variável pincel 
+    que é o contexto do canvas e a cor de fundo é definida como 
+    lightgray com um retângulo preenchido usando fillRect.
+
+    A seguir, são definidas as funções desenhaCirculo, 
+    limpaTela, desenhaAlvo, sorteiaPosicao e atualizaTela.
+
+    A função desenhaCirculo recebe como argumentos as 
+    coordenadas do centro do círculo, o raio e a cor. 
+    
+    A função limpaTela apaga o conteúdo do canvas 
+    usando o método clearRect do contexto do canvas.
+
+    A função desenhaAlvo recebe as coordenadas do 
+    centro do alvo e desenha um alvo com três círculos 
+    concêntricos de cores diferentes usando a função desenhaCirculo.
+
+    A função sorteiaPosicao recebe um argumento maximo 
+    e retorna um número inteiro aleatório entre 0 e maximo.
+
+    A função atualizaTela chama limpaTela para apagar 
+    o conteúdo anterior do canvas e sorteia novas 
+    coordenadas para o centro do alvo usando sorteiaPosicao 
+    e desenha um novo alvo usando desenhaAlvo. 
+    A função é chamada repetidamente em intervalos 
+    de 1000 milissegundos usando setInterval.
+
+    */
+
+</script>

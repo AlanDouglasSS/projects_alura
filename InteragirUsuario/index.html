@@ -1,0 +1,35 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.fill();
+
+    var cor = ['blue', 'yellow', 'red'] //ARRAY DE CORES
+    var IndiceCor = 0; //POSIÇÃO 0
+    function DesenhaCirculo(evento){
+
+        var x = evento.pageX - tela.offsetLeft; //REMOVE AS EXTREMIDADES DO ÁREA
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = cor[IndiceCor]; //INICIA NO ÍNDICE 0(BLUE)
+        pincel.beginPath();
+        pincel.arc(x, y, 15, 0, 2 * 3.14 + 20);
+        pincel.fill();
+
+        console.log(x + '|' + y);
+    }
+
+    tela.onclick = DesenhaCirculo; //EXIBI A BOLINHA
+
+    function mudaCor(){ //MUDARÁ A COR DA BOLINHA QUANDO APERTA BOTÃO DIREITO 
+        IndiceCor++
+        if(IndiceCor >= cor.length){
+            IndiceCor = 0;
+        }
+        return false; //IMPEDE QUE O MENU DO BOTÃO DIREITO SEJA EXIBIDO
+    }
+    tela.oncontextmenu = mudaCor;
+</script>

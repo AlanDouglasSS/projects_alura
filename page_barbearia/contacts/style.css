@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat', sans-serif;
+}
+
+/*=======HEADER=======*/
+
+header{
+    background: #bbbbbb;
+    padding: 20px 0;
+}
+
+.box{
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    text-decoration: underline #000;
+    color: darkgoldenrod;
+}
+
+
+
+/*=======MAIN=======*/
+
+
+main{
+    width: 940px;
+    margin: 0 auto;
+}
+
+form{
+    margin: 40px 0;    
+}
+
+
+fieldset{
+    border: 0;
+}
+
+/*=====ESPAÇAMENTO DO RADIO*/
+fieldset label input{
+    margin-right: 5px;
+}
+
+
+form label, form legend {
+    display:block;
+    font-size: 20px;
+    margin: 0 0 10px;
+    border: 0;
+}
+
+/*=====ESPAÇAMENTO DO CHECKBOX*/
+form label input{
+    margin-right: 5px;
+}
+
+
+.input-padrao{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+main form .buttom{
+    margin: auto;
+}
+
+.checkbox{
+    margin: 20px 0;
+}
+
+.buttom{
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.buttom:hover{
+    background: darkgoldenrod;
+    transform: scale(1.05);
+}
+
+/*=======TABLE===*/
+
+table{
+    margin: 20px 0 40px;
+}
+
+thead{
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+td, th{
+    border: 1px solid #000000;
+    padding: 15px 8px;
+}
+
+
+
+/*=======RODAPÉ=======*/
+
+footer{
+    color: #ccc;
+    text-align: center;
+    background: #ccc;
+    padding: 40px;
+    background-image: url(../img/bg.jpg);
+}

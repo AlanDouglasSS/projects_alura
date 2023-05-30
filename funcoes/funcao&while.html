@@ -1,0 +1,24 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    function quadrados(x, y, cor){
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.fillStroke = 'black';
+        pincel.strokeRect(x, y, 50, 50);
+
+    }
+
+    var x = 0;
+
+    while(x < 600){
+        quadrados(x, 0, 'green');
+        quadrados(x, 50, 'yellow');
+        quadrados(x, 100, 'red');
+        x = x + 50;
+    }
+</script>

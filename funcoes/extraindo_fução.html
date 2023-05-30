@@ -1,0 +1,53 @@
+<canvas width="600" height="400"></canvas>
+
+
+<script>
+
+    
+
+    function quadrados(x, y, cor){
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        /*==BLOCK REFERÊNCIA*/
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 50, 50);   
+        pincel.fillStroke = 'black';
+        pincel.strokeRect(x, y, 50, 50);
+
+        
+    }
+
+    quadrados(0, 0, 'green');
+    quadrados(50, 0, 'red');
+    quadrados(100, 0, 'yellow');
+    
+   
+    /*
+    var cores = ['green', 'yellow', 'red'];
+
+    function quadrados(x, y, tempo, cores) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+                  
+        function desenhaQuadrado(i) {
+            pincel.fillStyle = cores[i];
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = 'black';
+            pincel.strokeRect(x, y, 50, 50);
+        }
+    
+        for (var i = 0; i < 3; i++) {
+            setTimeout(desenhaQuadrado, tempo * (i + 1), i);
+        }
+    }
+  
+    quadrados(0, 0, 1000, cores);
+    quadrados(50, 0, 2000, cores);
+    quadrados(100, 0, 3000, cores);
+    */
+        
+</script>
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacts - Barbershop</title>
+</head>
+<body>
+
+    <!--====HEADER====-->
+
+    <header>
+
+        <div class="box">
+
+            <h1><img src="../img/logo.png" alt=""></h1>
+
+            <nav>
+                <ul>
+                    <li><a href="../home/index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+        
+        </div>
+
+        
+        
+
+    </header>
+
+    <!--=====MAIN=====-->
+    
+    <main class="">
+        <form action="">
+            <label for="nome&sobrenome">First-Name end Second-Name:</label>
+            <input class="input-padrao" type="text" id="nome&sobrenome" required>
+
+            <label for="email">e-mail:</label>
+            <input class="input-padrao" type="email" placeholder="exemple@exemple.com" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input class="input-padrao" type="tel" placeholder="(xx) xxxxx-xxxx" id="phone" required>
+
+            <label for="messenger">Mensagem</label>
+            <textarea class="input-padrao" id="mensagem" name="" cols="70" rows="10"></textarea>
+
+            <fieldset>
+                <legend>Preference for contact:</legend>
+                <label for="radio-email"> <input checked type="radio" name="contact" value="email" id="radio-email">Email</label>
+                
+
+                <label for="radio-phone"> <input type="radio" name="contact" value="phone" id="radio-phone">Phone</label>
+                
+
+                <label for="radio-whatsapp"> <input type="radio" name="contact" value="Whatsapp" id="radio-whatsapp">Whatsapp</label>              
+
+            </fieldset>
+
+            <fieldset>
+                <legend>What time</legend>
+                <select name="" id="">
+                    <option value="">Manhã</option>
+                    <option value="">Tarde</option>
+                    <option value="">Noite</option>
+                </select>
+                
+            </fieldset>
+            
+            <label class="checkbox" for="checkbox"><input type="checkbox" checked id="checkbox">Would you like to receive news?</label>            
+
+            <input class="buttom" type="submit" value="Enviar formulario">
+        </form>
+
+        <!--====TABLE FOR MAIN====-->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>08h ~ 12h</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>13h ~ 17h</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>13h ~ 17h</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+    </main>
+    
+    
+
+    <!--=====RODAPÉ=====-->
+
+    <footer>
+        <img src="../img/logo-branco.png" alt="">
+        <p>&copy; Copyright Barbershop Alura - 2023</p>
+    </footer>
+</body>
+</html>

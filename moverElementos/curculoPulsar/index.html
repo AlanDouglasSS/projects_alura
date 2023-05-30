@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
+  pincel.fillStyle = 'lightgray';
+  pincel.fillRect(0, 0, 600, 400);
+
+  function desenhaCirculo(x, y, raio, cor) {
+    pincel.fillStyle = cor;
+    pincel.beginPath();
+    pincel.arc(x, y, raio, 0, 2 * Math.PI);
+    pincel.fill();
+  }
+
+  function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+  }
+  var raio = 19;
+  var fatorCrescimento = 0;
+
+  function atualizaTela() {
+    limpaTela();
+    if (raio > 30) {
+      fatorCrescimento = -1;
+    } else if (raio < 20) {
+      fatorCrescimento = 1;
+    }
+    raio = raio + fatorCrescimento;
+    desenhaCirculo(300, 200, raio, 'blue');
+  }
+  setInterval(atualizaTela, 20);
+
+/*
+Esse código desenha um círculo azul que cresce e diminui
+continuamente em um fundo cinza claro. Ele usa um canvas 
+com largura de 600 pixels e altura de 400 pixels.
+
+A função desenhaCirculo desenha um círculo com base em um
+conjunto de parâmetros. Ela recebe quatro argumentos: as 
+coordenadas x e y do centro do círculo, o raio e a cor 
+do círculo. A função limpaTela limpa a tela antes de 
+desenhar o próximo quadro.
+
+As variáveis raio e fatorCrescimento são usadas para 
+controlar o tamanho do círculo. A cada atualização da 
+tela, o raio do círculo é incrementado ou decrementado 
+pelo fator de crescimento. Quando o raio atinge um 
+limite superior ou inferior, o fator de crescimento 
+é invertido, fazendo com que o raio comece a diminuir 
+ou a crescer.
+
+A função setInterval é usada para chamar a função 
+atualizaTela a cada 20 milissegundos, fazendo com que 
+o círculo cresça e diminua continuamente.
+*/
+</script>
