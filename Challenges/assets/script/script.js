@@ -15,24 +15,14 @@ function encodeMessage() {
     noMessage.style.display = 'none';
 }
 
-// Função para decodificar a mensagem
-/*
-function decodeMessage() {
-    messageContainer.style.display = 'none';
-    message.textContent = '';
-    noMessage.style.display = 'flex';
-}
-*/
 
 function decodeMessage() {
-    textInput.value = '';   
-    message.textContent = '';
-    reset()
     /*
-    messageContainer.style.display = 'none';
-    
-    
-    */
+    textInput.value = '';  
+    */ 
+    message.textContent = '';
+
+    reset()    
 }
 
 function reset(){
